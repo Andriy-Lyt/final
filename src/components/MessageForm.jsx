@@ -1,3 +1,5 @@
+// My File MsgForm
+
 import React, {useState} from 'react';
 import{ sendMessage, isTyping } from 'react-chat-engine';
 import { SendOutlined, PictureOutlined } from '@ant-design/icons';
@@ -19,7 +21,8 @@ function MessageForm(props) {
   }
 
   const handleUpload = (event) => {
-    sendMessage(creds, chatId, { files: event.target.file, text: ''});
+    console.log("event.target.file ln23 MsgForm.js: ", event.target.file);
+    sendMessage(creds, chatId, { files: event.target.files, text: ''});
   }
 
   return (

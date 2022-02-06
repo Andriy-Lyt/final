@@ -13,6 +13,19 @@ function ChatFeed(props) {
 
   // console.log(chat, userName, messages);
 
+  const renderReadReceipts = (message, isAdminMessage) => {
+   return chat.people.map((person, index) => person.last_read === message.id && (
+      <div
+        key={`read_${index}`}
+        className="read-receipt"
+        style={{
+          float: isAdminMessage ? 'right' : 'left',
+          backgroundImage: person.person.avatar && `url(${person.person.avatar})`,
+        }}
+      />
+    ));
+  } 
+
   const renderMessages = () => {
     const keys = Object.keys(messages);
     // console.log("keys: ", keys);
@@ -31,7 +44,7 @@ function ChatFeed(props) {
             }
           </div>
           <div className="read-receipts" style={{marginRight: isAdminMessage ? '18px' : '0px', marginLeft: isAdminMessage ? '0px' : '67px'}}>
-             {/* read-receipts */}
+             {renderReadReceipts(message, isAdminMessage)}
           </div>
         </div>
       );
@@ -48,7 +61,7 @@ function ChatFeed(props) {
       <div className="chat-title-container">
         <div className="chat-title">{chat?.title}</div>
         <div className="chat-subtitle">
-          {chat.people.map((person) => `${person.person.username}`)}
+        {chat.people.map((person) => ` ${person.person.username}`)}
         </div>
       </div>
       {renderMessages()}

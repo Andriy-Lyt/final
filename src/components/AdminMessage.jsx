@@ -3,7 +3,7 @@ import React from 'react'
 function AdminMessage({message}) {
   const darkBlue = '#3674c9';
   
-  if (message?.attachments?.length > 0) {
+  if (message.attachments && message.attachments.length > 0) {
     
     return(
       <img 
