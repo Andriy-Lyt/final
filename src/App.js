@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/App.css';
 import { ChatEngine } from 'react-chat-engine';
-import { ChatFeed } from './components/ChatFeed.jsx';
+import ChatFeed  from './components/ChatFeed';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         projectID="f427c030-b876-401d-8a99-790f0f95fe25"
         userName="admin1"
         userSecret="111"
-        /* renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />} */
+        renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />} 
     />
   </>
   );

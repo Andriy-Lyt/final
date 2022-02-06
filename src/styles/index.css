@@ -13,15 +13,11 @@ code {
     monospace;
 }
 
-/* Colors vars ------ 
-use example: 
-button {
-  background-color: var(--green);
-  color: var(--blue);
-  border: 1px solid var(--green);
-} 
-*/
-:root {
+/* Colors vars ------ */
+ :root {
   --green: #20a75d;
   --lgreen:  #3eca7d;
-}
+  --lblue: #ccdef5; /* var(--lblue) */
+ --mblue: #6296de; /* var(--med) */
+  --dblue: #3674c9; /* var(--dblue) */
+} 
